@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="app/styles/styles.css">
+
+  </head>
+  <body ng-app='myApp'>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+    <!-- External Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <!--Import jQuery before bootstrap-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers-->
+    <script src="app/controllers/homeCtrl.js"></script>
+
+    <!-- Factories-->
+    <script src="app/factories/dataFactory.js"></script>
+
+    <!-- Filters-->
+    <script src="app/filters/customFilters.js"></script>
+  </body>
