@@ -1,5 +1,9 @@
 # Sheets
 
-To run locally:
+Setup:
+
+
+```
 npm install
 node server/server.js
+```
