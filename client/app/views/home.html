@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-xs-6 left">
+      <b class="title">Clients</b>
+    </div>
+    <div class="col-xs-6">
+      <form ng-submit="getTag(query)" class="right">
+          <input class= "pill" type="text" placeholder= "  search" id="query" ng-model="query">
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <table>
+      <tr class="border_bottom">
+        <th class="col-xs-1"></th>
+        <th ng-mouseenter="highlightCol('score', true)" ng-mouseleave="highlightCol('score', false)" ng-click="sortBy('score')" class="grey col-xs-1">
+          SCORE
+          <span ng-show="currentField==='score'" class="glyphicon glyphicon-triangle-bottom" ></span>
+        </th>
+        <th ng-mouseenter="highlightCol('percentile', true)" ng-mouseleave="highlightCol('percentile', false)" ng-click="sortBy('percentile')" class="grey col-xs-1">
+          PERCENTILE
+          <span ng-show="currentField==='percentile'" class="glyphicon glyphicon-triangle-bottom" ></span>
+        </th>
+        <th ng-mouseenter="highlightCol('change', true)" ng-mouseleave="highlightCol('change', false)" ng-click="sortBy('change')" class="grey col-xs-2">
+          30-DAY
+          <span ng-show="currentField==='change'" class="glyphicon glyphicon-triangle-bottom" ></span>
+        </th>
+        <th ng-mouseenter="highlightCol('name', true)" ng-mouseleave="highlightCol('name', false)" ng-click="sortBy('name')" class="grey col-xs-4">
+          VENDOR
+          <span ng-show="currentField==='name'" class="glyphicon glyphicon-triangle-bottom" ></span>
+        </th>
+        <th ng-mouseenter="highlightCol('industry', true)" ng-mouseleave="highlightCol('industry', false)" ng-click="sortBy('industry')" class="grey col-xs-3">
+          INDUSTRY
+          <span ng-show="currentField==='industry'"  class="glyphicon glyphicon-triangle-bottom" ></span>
+        </th>
+      </tr>
+
+      <tr ng-repeat="client in clients | orderBy: field: reverse | filter: search" ng-class="{highlight: hover, selected: id===client.id && selected}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" class="border_bottom">
+        <td>
+          <input ng-model="client.checked" ng-click="selectRow(client.id, clients)" id="{{$index}}" class="checkbox-custom" type="checkbox">
+          <label for="{{$index}}" class="checkbox-custom-label"></label>
+        </td>
+        <td ng-class="{hover: column==='score' && toHighlight, 'red': client.score ==='D' || client.score ==='E' || client.score ==='F', 'green': client.score==='A', 'yellow': client.score==='B', 'orange': client.score==='C'}" class="score center">{{client.score}}</td></div>
+        <td ng-class="{hover: column==='percentile' && toHighlight }" class="percentile center">{{client.percentile | percentage:100}}</td></div>
+        <td ng-class="{hover: column==='change' && toHighlight, 'red': client.change < 0, 'green': client.change>0, 'grey': client.change===0}"  class="change center">{{client.change | pctChange }}</td></div>
+        <td ng-class="{hover: column==='name' && toHighlight }"  class="vendor" ng-class="{header:hover}">{{client.name}}</td></div>
+        <td ng-class="{hover: column==='industry' && toHighlight }"  class="industry">{{client.industry}}</td></div>
+      </tr>
+
+    </table>
+</div> 
+</div>
