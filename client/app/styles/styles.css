@@ -1,0 +1,107 @@
+
+.checkbox-custom{
+  opacity: 0;
+  position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.checkbox-custom-label {
+  position: relative; 
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+  content: '';
+  background: #fff;
+  border: 2px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+  background: #A9A9A9; 
+  box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.checkbox-custom:focus + .checkbox-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: center;
+}
+
+tr.border_bottom td {
+  border-bottom: 1pt solid #D3D3D3; /*light grey*/
+}
+
+tr.border_bottom th {
+  border-bottom: 1pt solid #D3D3D3; /*light grey*/
+}
+
+.hover {
+  background-color: #ADD8E6; /*light blue*/
+}
+
+.highlight:hover {
+  background-color: #D3D3D3; /*light grey*/
+}
+
+.selected{
+  background-color: #D3D3D3; /*light grey*/
+}
+
+.pill {
+  border-radius: 25px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.grey {
+  color: #D3D3D3; /*light grey*/
+}
+
+.yellow {
+  color: yellow;
+}
+
+.orange {
+  color: orange;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.title {
+  font-size: 150%;
+}
+
+.center {
+  text-align: center;
+}
+
